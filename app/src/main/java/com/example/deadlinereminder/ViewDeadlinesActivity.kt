@@ -71,11 +71,11 @@ class ViewDeadlinesActivity : AppCompatActivity() {
                 else -> Pair("🟢 LOW", "Due later")
             }
 
-            // ✅ Two-line display using newline
+            // Two-line display using newline
             "$priority — ${it.first} (${dateFormat.format(it.second)})\n$dueText"
         }
 
-        // ✅ Recommendation logic (already added)
+        // Recommendation logic (already added)
         if (highPriorityCount > 0) {
             recommendationText.visibility = View.VISIBLE
             recommendationText.text =

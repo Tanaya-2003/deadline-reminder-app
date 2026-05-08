@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- ✅ Recommendation banner (hidden by default) -->
+    <!--  Recommendation banner (hidden by default) -->
     <TextView
         android:id="@+id/recommendationText"
         android:layout_width="match_parent"

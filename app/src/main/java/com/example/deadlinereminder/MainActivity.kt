@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         saveButton.visibility = Button.INVISIBLE
         updateButton.visibility = Button.INVISIBLE
 
-        // ✅ DATE PICKER (FOR BOTH CREATE & UPDATE)
+        // DATE PICKER (FOR BOTH CREATE & UPDATE)
         dateInput.setOnClickListener {
             val calendar = Calendar.getInstance()
 
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
 
-        // ✅ TEXT WATCHER (CREATE MODE)
+        // TEXT WATCHER (CREATE MODE)
         val textWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         titleInput.addTextChangedListener(textWatcher)
         dateInput.addTextChangedListener(textWatcher)
 
-        // ✅ CREATE
+        // CREATE
         saveButton.setOnClickListener {
             dbHelper.insertDeadline(
                 titleInput.text.toString(),
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
             currentData = refreshList()
         }
 
-        // ✅ SELECT FOR UPDATE
+        // SELECT FOR UPDATE
         listView.setOnItemClickListener { _, _, position, _ ->
             selectedId = currentData[position].first
             val parts = currentData[position].second.split(" - ")
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
             updateButton.visibility = Button.VISIBLE
         }
 
-        // ✅ UPDATE
+        //  UPDATE
         updateButton.setOnClickListener {
             if (selectedId != null) {
                 dbHelper.deleteById(selectedId!!)
@@ -128,7 +128,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // ✅ DELETE WITH CONFIRMATION
+        // DELETE WITH CONFIRMATION
         listView.setOnItemLongClickListener { _, _, position, _ ->
             val idToDelete = currentData[position].first
 

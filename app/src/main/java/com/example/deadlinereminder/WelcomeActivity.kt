@@ -35,7 +35,7 @@ class WelcomeActivity : AppCompatActivity() {
     }
 
     /**
-     * ✅ This runs every time the app becomes visible.
+     * This runs every time the app becomes visible.
      * Ensures a DIFFERENT motivational quote on each app open.
      */
     override fun onResume() {
